@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
-//Perteneciente a Andres Flores, Carlos Caballero , Oscar Aviles, Carlos Dominguez, Kevin EsquivelFecha: 31/8/2025
 int main(){
+//Laboratorio grupal - HPA I, UTP (2025)
     int a, b, x, y;
     double z;
     float m;
