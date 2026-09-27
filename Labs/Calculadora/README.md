@@ -1,32 +1,31 @@
-# Calculator – Control Statements and Functions
+# Calculadora – Estructuras de control y funciones
 
-> Guided group lab — Applied Programming Tools I (UTP, 2025).
+> Laboratorio grupal guiado — Herramientas de Programación Aplicada I (UTP, 2025).
 
-## What it does
-A menu-driven calculator that loops until the user chooses to exit.
-Each option (add, subtract, divide, multiply) reads two integers and
-calls a dedicated function to compute the result.
+## Qué hace
+Una calculadora con menú que se repite hasta que el usuario elige salir.
+Cada opción (sumar, restar, dividir, multiplicar) lee dos enteros y llama
+a una función propia para calcular el resultado.
 
-## How to build
+## Cómo compilar
 ```
 gcc calculadora.c -o calculadora
 ./calculadora
 ```
 
-## What I practiced
-- `switch` statements and menu-driven program structure
-- Functions with return values
-- Input validation with `while`
-- Clearing the input buffer after `scanf` with `getchar()`
+## Qué practiqué
+- `switch` y estructura de programa basada en menú
+- Funciones con valor de retorno
+- Validación de entrada con `while`
+- Limpiar el búfer de entrada después de `scanf` con `getchar()`
 
-## Challenges and takeaways
-- Integer division truncates instead of rounding: `7 / 2` with two
-  `int` operands returns `3`, not `3.5`, because both operands are
-  integers.
-- The division check (`while (num2 <= 0)`) also rejects negative
-  numbers, but the error message only says "the denominator can't be
-  zero" — it doesn't describe what's actually being validated. A
-  clearer message would cover both cases.
-- `scanf("%d", ...)` leaves the newline character in the input
-  buffer. Without `while(getchar() != '\n'); getchar();` right after,
-  the "press Enter to continue" prompt gets skipped entirely.
+## Retos y aprendizajes
+- La división entera trunca en vez de redondear: `7 / 2` con dos
+  operandos `int` da `3`, no `3.5`, porque ambos son enteros.
+- La validación de la división (`while (num2 <= 0)`) también rechaza
+  negativos, pero el mensaje solo dice "el denominador no puede ser
+  cero". No describe lo que realmente se valida; un mensaje más claro
+  cubriría los dos casos.
+- `scanf("%d", ...)` deja el salto de línea en el búfer. Sin
+  `while(getchar() != '\n'); getchar();` justo después, el mensaje de
+  "presione Enter para continuar" se salta por completo.
