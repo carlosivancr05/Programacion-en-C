@@ -1,34 +1,30 @@
-# Series W – Functions and Accumulators
+# Serie W – Funciones y acumuladores
 
-> Guided group lab — Applied Programming Tools I (UTP, 2025).
+> Laboratorio grupal guiado — Herramientas de Programación Aplicada I (UTP, 2025).
 
-## What it does
-Computes the sum of the series `1/1! + 2/2! + 3/3! + ... + n/n!` for a
-user-given `n`, using a function that accumulates both the running
-factorial and the running sum in the same loop.
+## Qué hace
+Calcula la suma de la serie `1/1! + 2/2! + 3/3! + ... + n/n!` para un `n`
+dado por el usuario, con una función que acumula el factorial y la suma
+en el mismo ciclo.
 
-## How to build
+## Cómo compilar
 ```
 gcc sumaw.c -o sumaw
 ./sumaw
 ```
 
-## What I practiced
-- Functions that return a value (`float sumar(int n)`)
-- Accumulator pattern: updating a running total (and a running
-  factorial) inside the same loop
-- Implicit and explicit type conversion between `int` and `float`
+## Qué practiqué
+- Funciones que retornan un valor (`float sumar(int n)`)
+- Patrón acumulador: actualizar un total (y un factorial) dentro del mismo ciclo
+- Conversión implícita y explícita entre `int` y `float`
 
-## Challenges and takeaways
-- **Input validation only checks for zero.** `while(n == 0)` lets a
-  negative `n` through. Since the `for` loop condition is `i <= n`,
-  a negative `n` means the loop body never runs even once, so the
-  function silently returns `0.000` instead of flagging an invalid
-  input.
-- **Integer overflow in the factorial.** `fact` is declared as `int`,
-  independently of `serie` being `float`. For `n` around 13–15,
-  `n!` exceeds what a 32-bit `int` can hold, and `fact` silently
-  wraps around to a wrong (sometimes negative) value with no error
-  or warning — the program keeps running as if nothing happened.
-  A `long long` (or `double`) for `fact` would hold much larger
-  values before overflowing.
+## Retos y aprendizajes
+- **La validación solo revisa el cero.** `while(n == 0)` deja pasar un `n`
+  negativo. Como la condición del `for` es `i <= n`, con un `n` negativo
+  el ciclo nunca se ejecuta y la función retorna `0.000` sin avisar que
+  la entrada no era válida.
+- **Desbordamiento del factorial.** `fact` es `int`, aunque `serie` sea
+  `float`. Para `n` entre 13 y 15, `n!` supera lo que cabe en un `int`
+  de 32 bits, y `fact` da la vuelta a un valor incorrecto (a veces
+  negativo) sin error ni advertencia. Con `long long` (o `double`) para
+  `fact` se aguantarían valores mucho más grandes antes de desbordar.
