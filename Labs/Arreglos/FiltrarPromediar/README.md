@@ -1,31 +1,30 @@
-# Filtering and Averaging an Array
+# Filtrar y promediar un arreglo
 
-> Individual lab — Applied Programming Tools I (UTP, 2025).
+> Laboratorio individual — Herramientas de Programación Aplicada I (UTP, 2025).
 
-## What it does
-Reads 50 integers into an array and computes two things from them:
-the sum of all even numbers, and the average of the numbers greater
-than 90.
+## Qué hace
+Lee 50 enteros en un arreglo y calcula dos cosas: la suma de todos los
+números pares y el promedio de los números mayores que 90.
 
-## How to build
+## Cómo compilar
 ```
 gcc lab11.c -o lab11
 ./lab11
 ```
 
-## What I practiced
-- Passing arrays to functions and iterating with a fixed bound
-- Filtering elements with a condition inside a loop
-- Guarding a division against a zero denominator (`if (cont > 0)`)
+## Qué practiqué
+- Pasar arreglos a funciones y recorrerlos con un límite fijo
+- Filtrar elementos con una condición dentro de un ciclo
+- Proteger una división contra un denominador cero (`if (cont > 0)`)
 
-## Challenges and takeaways
-- `promedio` is declared as `int`, so the average is truncated:
-  three values `95, 96, 92` give `283/3 = 94.33`, but the program
-  prints `94`. Same integer-division behavior as in other labs, just
-  applied to an average this time.
-- Unlike the array-normalization lab, this one properly checks
-  `cont > 0` before dividing, so it never divides by zero even if no
-  number is greater than 90 — it just returns `0`.
-- The parity check (`numero[i] % 2 == 0`) works correctly with
-  negative numbers in C: `-4 % 2` evaluates to `0`, so `-4` is
-  correctly counted (and summed) as even.
+## Retos y aprendizajes
+- `promedio` está declarado como `int`, así que el promedio se trunca:
+  con `95, 96, 92` da `283/3 = 94.33`, pero el programa imprime `94`.
+  Es el mismo comportamiento de división entera de otros labs, esta vez
+  aplicado a un promedio.
+- A diferencia del lab de normalización, este sí revisa `cont > 0` antes
+  de dividir, así que nunca divide entre cero aunque ningún número sea
+  mayor que 90: simplemente retorna `0`.
+- La revisión de paridad (`numero[i] % 2 == 0`) funciona bien con
+  negativos en C: `-4 % 2` da `0`, así que `-4` se cuenta (y se suma)
+  correctamente como par.
