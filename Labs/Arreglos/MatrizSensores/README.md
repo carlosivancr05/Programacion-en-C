@@ -1,33 +1,33 @@
-# Sensor Matrix – Averages, Min and Max
+# Matriz de sensores – Promedios, mínimo y máximo
 
-> Guided group lab — Applied Programming Tools I (UTP, 2025).
+> Laboratorio grupal guiado — Herramientas de Programación Aplicada I (UTP, 2025).
 
-## What it does
-Reads 5 measurements from 3 simulated sensors into a 2D array
-(`temp[5][3]`) and, for each sensor (column), computes the average,
-the lowest reading, and the highest reading.
+## Qué hace
+Lee 5 mediciones de 3 sensores simulados en un arreglo 2D (`temp[5][3]`)
+y, para cada sensor (columna), calcula el promedio, la lectura más baja
+y la más alta.
 
-## How to build
+## Cómo compilar
 ```
 gcc Formativa3.c -o formativa3
 ./formativa3
 ```
 
-## What I practiced
-- 2D arrays (`float temp[F][C]`) and passing them to functions
-- Iterating rows vs. columns correctly to avoid mixing data from
-  different sensors
-- Finding min/max by initializing both to the first element before
-  comparing the rest
+## Qué practiqué
+- Arreglos 2D (`float temp[F][C]`) y cómo pasarlos a funciones
+- Recorrer filas vs. columnas correctamente para no mezclar datos de
+  distintos sensores
+- Encontrar mínimo y máximo inicializando ambos con el primer elemento
+  antes de comparar el resto
 
-## Challenges and takeaways
-- The nested loop order matters: the inner loop has to move across
-  *readings for one sensor* (rows, `i`) before moving to the *next
-  sensor* (columns, `j`) otherwise the average would mix values
-  from different sensors together.
-- `menor`/`mayor` (min/max) start by copying the very first reading
-  (`i = 0`), then the comparison loop starts at `i = 1` comparing
-  the first value against itself would be redundant.
-- Unlike the array-normalization lab, everything here the array,
-  the accumulator, the averages is declared `float` from the start,
-  so there's no integer-division truncation anywhere in the chain.
+## Retos y aprendizajes
+- El orden de los ciclos anidados importa: el ciclo interno tiene que
+  recorrer *las lecturas de un sensor* (filas, `i`) antes de pasar al
+  *siguiente sensor* (columnas, `j`); si no, el promedio mezclaría
+  valores de sensores distintos.
+- `menor` y `mayor` empiezan copiando la primera lectura (`i = 0`), y el
+  ciclo de comparación empieza en `i = 1`: comparar el primer valor
+  consigo mismo sería redundante.
+- A diferencia del lab de normalización, aquí todo (el arreglo, el
+  acumulador, los promedios) es `float` desde el inicio, así que no hay
+  truncamiento por división entera en ningún punto.
