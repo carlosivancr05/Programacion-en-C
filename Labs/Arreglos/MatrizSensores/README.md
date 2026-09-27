@@ -26,7 +26,7 @@ gcc Formativa3.c -o formativa3
   sensor* (columns, `j`) otherwise the average would mix values
   from different sensors together.
 - `menor`/`mayor` (min/max) start by copying the very first reading
-  (`i = 0`), then the comparison loop starts at `i = 1` — comparing
+  (`i = 0`), then the comparison loop starts at `i = 1` comparing
   the first value against itself would be redundant.
 - Unlike the array-normalization lab, everything here the array,
   the accumulator, the averages is declared `float` from the start,
