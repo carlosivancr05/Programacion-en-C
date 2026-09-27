@@ -23,11 +23,11 @@ gcc Formativa3.c -o formativa3
 ## Challenges and takeaways
 - The nested loop order matters: the inner loop has to move across
   *readings for one sensor* (rows, `i`) before moving to the *next
-  sensor* (columns, `j`) — otherwise the average would mix values
+  sensor* (columns, `j`) otherwise the average would mix values
   from different sensors together.
 - `menor`/`mayor` (min/max) start by copying the very first reading
-  (`i = 0`), then the comparison loop starts at `i = 1` — comparing
+  (`i = 0`), then the comparison loop starts at `i = 1` comparing
   the first value against itself would be redundant.
-- Unlike the array-normalization lab, everything here — the array,
-  the accumulator, the averages — is declared `float` from the start,
+- Unlike the array-normalization lab, everything here the array,
+  the accumulator, the averages is declared `float` from the start,
   so there's no integer-division truncation anywhere in the chain.
